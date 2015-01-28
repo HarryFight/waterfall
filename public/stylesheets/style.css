@@ -1,0 +1,18 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+body{
+    font-size:12px;
+}
+#waterfall-container{
+    height:10000px;
+    position: relative;
+    top:0px;
+    left:50%;
+    margin-left:-430px;
+}
+#waterfall-container .waterfall-item{
+    position: absolute;
+    overflow:hidden;
+}
