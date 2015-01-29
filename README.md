@@ -5,9 +5,9 @@
 
 
 ###使用方法：
-提取`waterfall/public/javascripts/waterfall.js`作为插件
+提取`waterfall/public/javascripts/waterfall.js`作为插件。[这里](https://github.com/HarryFight/waterfall/blob/master/public/javascripts/waterfall.js)
 
-`waterfall/views/index.ejs`为插件演示的html文件。
+`waterfall/views/index.ejs`为插件演示的html文件。[这里](https://github.com/HarryFight/waterfall/blob/master/views/index.ejs)
 
 
 插件调用方式：
