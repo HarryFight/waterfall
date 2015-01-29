@@ -6,13 +6,19 @@ body{
     font-size:12px;
 }
 #waterfall-container{
-    height:10000px;
+    height:1000px;
     position: relative;
-    top:0px;
+    padding: 50px 0 0 0;
+    top:0;
     left:50%;
     margin-left:-430px;
+    background-color: rgba(0,0,0,0.2);
 }
 #waterfall-container .waterfall-item{
     position: absolute;
     overflow:hidden;
+    z-index:10;
+}
+.waterfall-item{
+
 }

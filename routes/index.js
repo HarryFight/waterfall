@@ -3,14 +3,14 @@ var router = express.Router();
 
 //图片资源数组
 var randoms = [
-    '{"url":"./img/1.jpg","width":600,"height":337}',
-    '{"url":"./img/2.jpg","width":600,"height":418}',
-    '{"url":"./img/3.jpg","width":480,"height":320}',
-    '{"url":"./img/4.jpg","width":600,"height":400}',
-    '{"url":"./img/5.jpg","width":600,"height":345}',
-    '{"url":"./img/6.jpg","width":600,"height":449}',
-    '{"url":"./img/7.jpg","width":320,"height":480}',
-    '{"url":"./img/8.jpg","width":580,"height":435}'
+    '{"url":"./images/1.jpg","width":600,"height":337}',
+    '{"url":"./images/2.jpg","width":600,"height":418}',
+    '{"url":"./images/3.jpg","width":480,"height":320}',
+    '{"url":"./images/4.jpg","width":600,"height":400}',
+    '{"url":"./images/5.jpg","width":600,"height":345}',
+    '{"url":"./images/6.jpg","width":600,"height":449}',
+    '{"url":"./images/7.jpg","width":320,"height":480}',
+    '{"url":"./images/8.jpg","width":580,"height":435}'
 ];
 
 /* GET home page. */
