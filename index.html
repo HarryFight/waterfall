@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Waterfall : 瀑布流插件实现（需要jqeury支持）">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Waterfall</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/HarryFight/waterfall">View on GitHub</a>
+
+          <h1 id="project_title">Waterfall</h1>
+          <h2 id="project_tagline">瀑布流插件实现（需要jqeury支持）</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/HarryFight/waterfall/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/HarryFight/waterfall/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="waterfall" class="anchor" href="#waterfall" aria-hidden="true"><span class="octicon octicon-link"></span></a>waterfall</h1>
+
+<p>瀑布流插件实现</p>
+
+<p><strong><em>注：需要jquery支持。ie8+，chrome，FF等主流浏览器皆可</em></strong></p>
+
+<h3>
+<a id="使用方法" class="anchor" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用方法：</h3>
+
+<p>提取<code>waterfall/public/javascripts/waterfall.js</code>作为插件。<a href="https://github.com/HarryFight/waterfall/blob/master/public/javascripts/waterfall.js">这里</a></p>
+
+<p><code>waterfall/views/index.ejs</code>为插件演示的html文件。<a href="https://github.com/HarryFight/waterfall/blob/master/views/index.ejs">这里</a></p>
+
+<p>插件调用方式：</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> waterfall <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Waterfall</span>({
+            colums<span class="pl-k">:</span>[<span class="pl-c1">200</span>,<span class="pl-c1">200</span>,<span class="pl-c1">200</span>,<span class="pl-c1">200</span>],
+            marginRight<span class="pl-k">:</span><span class="pl-c1">20</span>,
+            marginBottom<span class="pl-k">:</span><span class="pl-c1">40</span>,
+            container<span class="pl-k">:</span>$(<span class="pl-s1"><span class="pl-pds">"</span>#waterfall-container<span class="pl-pds">"</span></span>),
+            loadUrl<span class="pl-k">:</span><span class="pl-s1"><span class="pl-pds">"</span>./getImg<span class="pl-pds">"</span></span>,
+            maxLoad<span class="pl-k">:</span><span class="pl-c1">100</span>
+        });</pre></div>
+
+<p>插件缺省配置：</p>
+
+<div class="highlight highlight-javascript"><pre> <span class="pl-s">var</span> DEFAULT_OPT <span class="pl-k">=</span> {
+        container<span class="pl-k">:</span><span class="pl-s1"><span class="pl-pds">'</span>#waterfall-container<span class="pl-pds">'</span></span>,
+        colums<span class="pl-k">:</span>[<span class="pl-c1">200</span>,<span class="pl-c1">200</span>,<span class="pl-c1">200</span>,<span class="pl-c1">200</span>],
+        marginRight<span class="pl-k">:</span><span class="pl-c1">20</span>,
+        marginBottom<span class="pl-k">:</span><span class="pl-c1">20</span>,
+        loadUrl<span class="pl-k">:</span><span class="pl-s1"><span class="pl-pds">'</span>./getImg<span class="pl-pds">'</span></span>,
+        maxLoad<span class="pl-k">:</span><span class="pl-c1">200</span>
+    };</pre></div>
+
+<h3>
+<a id="实现思路" class="anchor" href="#%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF" aria-hidden="true"><span class="octicon octicon-link"></span></a>实现思路：</h3>
+
+<p>1、插件构造函数初始化</p>
+
+<p>2、initColums初始化，计算每一列的位置，初始化列高</p>
+
+<p>3、注册scroll事件，触发后loadImgs</p>
+
+<p>4、使用ajax获取数据json</p>
+
+<p>5、使用render渲染获取到的数据</p>
+
+<p>6、getMin获取最优可添加item节点的列</p>
+
+<p>7、渲染时，添加dom节点。首先遍历数据，生成html字符并且产生dom节点，通过比较每列高度，优先添加到最低高度的列上</p>
+
+<p>8、细节优化（比如限制加载数量等）。</p>
+
+<h3>
+<a id="小结" class="anchor" href="#%E5%B0%8F%E7%BB%93" aria-hidden="true"><span class="octicon octicon-link"></span></a>小结：</h3>
+
+<p>源文件中waterfall对象的原型中有关于节点复用的部分，此部分尚未完善，在以后有想法后会慢慢补充完成。</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Waterfall maintained by <a href="https://github.com/HarryFight">HarryFight</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
