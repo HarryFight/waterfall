@@ -22,6 +22,7 @@ var waterfall = new Waterfall({
             maxLoad:100
         });
 ```
+`loadUrl`若地址在不同域中，将采取jsonp的数据获取方式，url格式则为`你的url+?callbak=?`
 插件缺省配置：
 ```javascript
  var DEFAULT_OPT = {
